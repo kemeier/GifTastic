@@ -1,15 +1,18 @@
-var buttonsArr = ["Fish","Crab","Eel"];
+$(document).ready(function(){
+
+
+var topics = ["Fish","Crab","Eel"];
 
 $(function(){
-    addButtons(buttonsArr, 'searchButton', '#buttons-display')
+    addButtons(topics, 'searchButton', '#buttons-display')
 })
 
-function addButtons(buttonsArr, addClass, addToPage){
+function addButtons(topics, addClass, addToPage){
     $(addToPage).empty();
-    for(var i=0; i<buttonsArr.length; i++)   {
+    for(var i=0; i<topics.length; i++)   {
         var j=$('<button>');
-        j.text(buttonsArr[i]);
-        j.attr('data-type',buttonsArr[i]);
+        j.text(topics[i]);
+        j.attr('data-type',topics[i]);
         j.addClass(addClass);
         $(addToPage).append(j);
     }
@@ -51,3 +54,15 @@ $(document).on('click', '.searchButton', function() {
         }
     })
 })
+
+$('#addSearch').on('click', function(event){
+    console.log("yo")
+    event.preventDefault();
+    console.log("hi");
+    var newSearch = $('input').eq(0).val();
+    topics.push(newSearch);
+    console.log(topics, newSearch);
+    addButtons(topics, 'searchButton', '#buttons-display');
+    return false
+})
+});

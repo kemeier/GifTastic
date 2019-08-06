@@ -1,1 +1,2 @@
-# GifTastic
+GifTastic is a page that uses the GIPHY API to make a dynamic web page that populates with gifs of the user's choice, both still and animated. 
+The project uses GIPHY API, JavaScript, jQuery, Bootstrap, to change the HTML of your site.
